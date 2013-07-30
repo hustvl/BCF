@@ -1,4 +1,3 @@
-
 function extr_cf(img_dir, fmt, sc_para)
     
     database = retr_database_dir(img_dir, fmt);
@@ -65,7 +64,9 @@ function func_extr_cf(im_name, cf_para )
         sc = sc / sum(sc);
         
         feat_sc(  1:size(sc,1), i ) = sc;
-        xy( i, 1:2 ) = sc( round(end/2), : );
+        
+        cf = pnts{i};
+        xy( i, 1:2 ) = cf( round(end/2), : );
     end
     
     sz = size(I);
